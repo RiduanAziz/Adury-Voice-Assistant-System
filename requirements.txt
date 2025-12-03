@@ -1,0 +1,7 @@
+pyttsx3
+SpeechRecognition
+wikipedia
+pyaudio
+openai
+google-generativeai
+requests
