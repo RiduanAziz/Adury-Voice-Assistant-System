@@ -98,8 +98,8 @@ def gemini_model_response(query):
     try:
         GEMINI_API_KEY = "AIzaSyABdPgPVOMTd1b8xJe5uJx_pC2uaGBviBU"
         genai.configure(api_key=GEMINI_API_KEY)
-        model = genai.GenerativeModel("gemini-3-pro-preview")
-
+        model = genai.GenerativeModel("gemini-2.5-flash")
+        prompt = f"Answer the provided question in short, Question: {query}"
         response = model.generate_content(query)
         return response.text if response else "I couldn't generate a response."
 
