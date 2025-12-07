@@ -96,7 +96,7 @@ def wiki_search(topic):
 
 def gemini_model_response(query):
     try:
-        GEMINI_API_KEY = "AIzaSyABdPgPVOMTd1b8xJe5uJx_pC2uaGBviBU"
+        GEMINI_API_KEY = "Your API Key Here"
         genai.configure(api_key=GEMINI_API_KEY)
         model = genai.GenerativeModel("gemini-2.5-flash")
         prompt = f"Answer the provided question in short, Question: {query}"
