@@ -5,3 +5,4 @@ pyaudio
 openai
 google-generativeai
 requests
+
