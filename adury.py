@@ -13,7 +13,7 @@ import google.generativeai as genai
 from ctypes import cast, POINTER
 from comtypes import CLSCTX_ALL
 from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
-
+import serial
 
 LOG_DIR = "logs"
 LOG_FILE = "application.log"
