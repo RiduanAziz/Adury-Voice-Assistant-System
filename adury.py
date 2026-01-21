@@ -15,6 +15,11 @@ from comtypes import CLSCTX_ALL
 from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
 import serial
 
+# Set up serial communication (example for Arduino)
+ser = serial.Serial('COM3', 9600, timeout=1)  # Update 'COM3
+time.sleep(2)  # wait for the serial connection to initialize
+
+
 LOG_DIR = "logs"
 LOG_FILE = "application.log"
 os.makedirs(LOG_DIR, exist_ok=True)
@@ -246,6 +251,29 @@ def main():
                 set_volume(num)
             except:
                 speak("Please say a valid percentage.")
+        
+        elif "turn on everything" in query:
+            speak("Turning on everything.")
+            ser.write(b'0')  # Example command to turn on everything
+            time.sleep(1)
+            speak("All devices are now on.")
+            logging.info("User requested to turn on everything.")
+        
+        elif "turn off everything" in query:
+            speak("Turning off everything.")
+            ser.write(b'9')  # Example command to turn off everything
+            time.sleep(1)
+            speak("All devices are now off.")
+            logging.info("User requested to turn off everything.")
+        
+        elif "turn on bedroom light" in query:
+            speak("Turning on bedroom light.")
+            ser.write(b'2')  # Example command to turn on bedroom light
+            time.sleep(1)
+            speak("Bedroom light is now on.")
+            logging.info("User requested to turn on bedroom light.")
+
+        
 
         else:
             speak("Let me think.")
