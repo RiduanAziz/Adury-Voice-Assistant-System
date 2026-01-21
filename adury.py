@@ -173,6 +173,18 @@ def volume_down():
     except:
         speak("Failed to decrease volume.")
 
+def gemini_model_response(query):
+    try:
+        GEMINI_API_KEY = "Your API Key Here"
+        genai.configure(api_key=GEMINI_API_KEY)
+        model = genai.GenerativeModel("gemini-2.5-flash")
+        prompt = f"Answer the provided question in short, Question: {query}"
+        response = model.generate_content(prompt)
+        return response.text if response else "I couldn't generate a response."
+
+    except Exception as e:
+        logging.error(f"Gemini Error: {e}")
+        return "Sorry, I couldn't get a response from the AI model."
 
 def main():
     greeting()
@@ -239,6 +251,7 @@ def main():
             speak("Let me think.")
             answer = gemini_model_response(query)
             speak(answer)
+            logging.info("Gemini Response: " + answer)
 
 if __name__ == "__main__":
     try:

@@ -5,4 +5,4 @@ pyaudio
 openai
 google-generativeai
 requests
-
+pyinstaller

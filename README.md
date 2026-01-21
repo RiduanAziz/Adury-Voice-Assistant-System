@@ -55,10 +55,23 @@ This project uses speech recognition, text-to-speech (TTS), web automation, and 
    ```bash
    pip install -r requirements.txt
    ```
+4. **Place API Key**
+   ```bash
+   GEMINI_API_KEY = "Your API Key Here"
+   ```
 
-4. **Run the assistant:**
+5. **Run the assistant:**
    ```bash
    python adury.py
+   ```
+
+6. **For exe file conversion:**
+   ```bash
+   pip install pyinstaller
+   ```
+
+   ```bash
+   pyinstaller --onefile adury.py
    ```
 
 ---
@@ -68,7 +81,14 @@ This project uses speech recognition, text-to-speech (TTS), web automation, and 
 ```
 Adury-Voice-Assistant-System/
 │
+├── logs/
+│   └── application.log
+├── music/
+│   └── music.mp3
+├── .gitignore
+├── adury.ipynb
 ├── adury.py
+├── LICENSE
 ├── requirements.txt
 └── README.md
 ```
